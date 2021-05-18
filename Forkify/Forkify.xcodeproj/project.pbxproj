@@ -24,6 +24,10 @@
 		696D31242653F08900F44246 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D31232653F08900F44246 /* HomeVC.swift */; };
 		696D312626540A7C00F44246 /* PrivateJi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D312526540A7C00F44246 /* PrivateJi.swift */; };
 		696D312826540CB800F44246 /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D312726540CB800F44246 /* HTMLParser.swift */; };
+		696D312C26540ECC00F44246 /* HomeListStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D312B26540ECC00F44246 /* HomeListStrategy.swift */; };
+		696D312E2654139100F44246 /* MealStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D312D2654139100F44246 /* MealStrategy.swift */; };
+		696D3132265415EC00F44246 /* MealTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D3130265415EC00F44246 /* MealTableCell.swift */; };
+		696D3133265415EC00F44246 /* MealTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 696D3131265415EC00F44246 /* MealTableCell.xib */; };
 		C6CFE20DB39867EBE8B8464A /* Pods_Forkify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A403671F1484E215DF55C69 /* Pods_Forkify.framework */; };
 		E27AD4700F9FA8FDE4746050 /* Pods_ForkifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0860E5C592021822F818E883 /* Pods_ForkifyTests.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +76,10 @@
 		696D31232653F08900F44246 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		696D312526540A7C00F44246 /* PrivateJi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateJi.swift; sourceTree = "<group>"; };
 		696D312726540CB800F44246 /* HTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
+		696D312B26540ECC00F44246 /* HomeListStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListStrategy.swift; sourceTree = "<group>"; };
+		696D312D2654139100F44246 /* MealStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealStrategy.swift; sourceTree = "<group>"; };
+		696D3130265415EC00F44246 /* MealTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableCell.swift; sourceTree = "<group>"; };
+		696D3131265415EC00F44246 /* MealTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealTableCell.xib; sourceTree = "<group>"; };
 		8FD84F9CE42C577714054D52 /* Pods-ForkifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForkifyTests.debug.xcconfig"; path = "Target Support Files/Pods-ForkifyTests/Pods-ForkifyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		91EC7EC6EF76FE7431E79741 /* Pods-Forkify-ForkifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forkify-ForkifyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Forkify-ForkifyUITests/Pods-Forkify-ForkifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96F949CD8EC9966085E4FB97 /* Pods-Forkify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forkify.release.xcconfig"; path = "Target Support Files/Pods-Forkify/Pods-Forkify.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 				696D31152653E53C00F44246 /* PrivatePods */,
 				696D31162653E54500F44246 /* Resources */,
 				696D31172653E56400F44246 /* Storyboards */,
+				696D312926540E9900F44246 /* Strategies */,
 				696D31102653E4F100F44246 /* Views */,
 			);
 			path = Forkify;
@@ -204,6 +213,7 @@
 		696D31102653E4F100F44246 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				696D312F265414CB00F44246 /* MealTableCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +286,32 @@
 				696D31232653F08900F44246 /* HomeVC.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		696D312926540E9900F44246 /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				696D312A26540EAB00F44246 /* Home */,
+			);
+			path = Strategies;
+			sourceTree = "<group>";
+		};
+		696D312A26540EAB00F44246 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				696D312B26540ECC00F44246 /* HomeListStrategy.swift */,
+				696D312D2654139100F44246 /* MealStrategy.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		696D312F265414CB00F44246 /* MealTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				696D3130265415EC00F44246 /* MealTableCell.swift */,
+				696D3131265415EC00F44246 /* MealTableCell.xib */,
+			);
+			path = MealTableCell;
 			sourceTree = "<group>";
 		};
 		8EAA59D5A2491CB0DC2CF131 /* Frameworks */ = {
@@ -397,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				696D30EA2653E0EF00F44246 /* LaunchScreen.storyboard in Resources */,
+				696D3133265415EC00F44246 /* MealTableCell.xib in Resources */,
 				696D30E72653E0EF00F44246 /* Assets.xcassets in Resources */,
 				696D30E22653E0ED00F44246 /* Main.storyboard in Resources */,
 			);
@@ -527,10 +564,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				696D312826540CB800F44246 /* HTMLParser.swift in Sources */,
+				696D3132265415EC00F44246 /* MealTableCell.swift in Sources */,
 				696D311B2653E61B00F44246 /* TargetType.swift in Sources */,
 				696D30DB2653E0ED00F44246 /* AppDelegate.swift in Sources */,
 				696D30E52653E0ED00F44246 /* Forkify.xcdatamodeld in Sources */,
 				696D31242653F08900F44246 /* HomeVC.swift in Sources */,
+				696D312E2654139100F44246 /* MealStrategy.swift in Sources */,
+				696D312C26540ECC00F44246 /* HomeListStrategy.swift in Sources */,
 				696D312626540A7C00F44246 /* PrivateJi.swift in Sources */,
 				696D311D2653E62B00F44246 /* BaseResponse.swift in Sources */,
 				696D311F2653E63400F44246 /* BaseAPI.swift in Sources */,
