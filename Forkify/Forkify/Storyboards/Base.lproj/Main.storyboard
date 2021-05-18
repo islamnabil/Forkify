@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SPz-Jd-h8e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,20 +9,63 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Forkify-->
+        <scene sceneID="ftH-av-lYL">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Forkify" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="HomeVC" id="rbS-BP-boG" customClass="HomeVC" customModule="Forkify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2dn-9A-w55">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tKL-C0-pOl">
+                                <rect key="frame" x="0.0" y="139" width="414" height="723"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Search for recipes" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ej7-HB-3VB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MVw-75-wPW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ej7-HB-3VB" firstAttribute="trailing" secondItem="MVw-75-wPW" secondAttribute="trailing" id="9WV-Bi-xf6"/>
+                            <constraint firstItem="ej7-HB-3VB" firstAttribute="leading" secondItem="MVw-75-wPW" secondAttribute="leading" id="O1E-yv-e1S"/>
+                            <constraint firstItem="tKL-C0-pOl" firstAttribute="top" secondItem="ej7-HB-3VB" secondAttribute="bottom" id="Q16-36-fqN"/>
+                            <constraint firstItem="tKL-C0-pOl" firstAttribute="leading" secondItem="MVw-75-wPW" secondAttribute="leading" id="TQb-ru-Vd4"/>
+                            <constraint firstItem="MVw-75-wPW" firstAttribute="bottom" secondItem="tKL-C0-pOl" secondAttribute="bottom" id="UPq-2W-XkC"/>
+                            <constraint firstItem="ej7-HB-3VB" firstAttribute="top" secondItem="MVw-75-wPW" secondAttribute="top" id="lNk-4X-I4x"/>
+                            <constraint firstItem="MVw-75-wPW" firstAttribute="trailing" secondItem="tKL-C0-pOl" secondAttribute="trailing" id="xMr-v7-ISc"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Forkify" id="6Gt-Sd-3uu"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zp6-Rn-E2d" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="104"/>
+            <point key="canvasLocation" x="1000.0000000000001" y="103.79464285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ss8-LE-dEv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SPz-Jd-h8e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ov3-Ws-8Qe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rbS-BP-boG" kind="relationship" relationship="rootViewController" id="hby-VE-bvB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V2z-wE-0xd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="89.855072463768124" y="103.79464285714285"/>
         </scene>
     </scenes>
     <resources>

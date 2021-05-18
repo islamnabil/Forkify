@@ -10,7 +10,6 @@
 		1873C0D88B0EAD194B92AE9B /* Pods_Forkify_ForkifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9058D8FDD8653914AE4CFE /* Pods_Forkify_ForkifyUITests.framework */; };
 		696D30DB2653E0ED00F44246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D30DA2653E0ED00F44246 /* AppDelegate.swift */; };
 		696D30DD2653E0ED00F44246 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D30DC2653E0ED00F44246 /* SceneDelegate.swift */; };
-		696D30DF2653E0ED00F44246 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D30DE2653E0ED00F44246 /* ViewController.swift */; };
 		696D30E22653E0ED00F44246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696D30E02653E0ED00F44246 /* Main.storyboard */; };
 		696D30E52653E0ED00F44246 /* Forkify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 696D30E32653E0ED00F44246 /* Forkify.xcdatamodeld */; };
 		696D30E72653E0EF00F44246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 696D30E62653E0EF00F44246 /* Assets.xcassets */; };
@@ -22,6 +21,9 @@
 		696D311D2653E62B00F44246 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D311C2653E62B00F44246 /* BaseResponse.swift */; };
 		696D311F2653E63400F44246 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D311E2653E63400F44246 /* BaseAPI.swift */; };
 		696D31212653E88F00F44246 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D31202653E88F00F44246 /* Constants.swift */; };
+		696D31242653F08900F44246 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D31232653F08900F44246 /* HomeVC.swift */; };
+		696D312626540A7C00F44246 /* PrivateJi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D312526540A7C00F44246 /* PrivateJi.swift */; };
+		696D312826540CB800F44246 /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D312726540CB800F44246 /* HTMLParser.swift */; };
 		C6CFE20DB39867EBE8B8464A /* Pods_Forkify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A403671F1484E215DF55C69 /* Pods_Forkify.framework */; };
 		E27AD4700F9FA8FDE4746050 /* Pods_ForkifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0860E5C592021822F818E883 /* Pods_ForkifyTests.framework */; };
 /* End PBXBuildFile section */
@@ -51,7 +53,6 @@
 		696D30D72653E0ED00F44246 /* Forkify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forkify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		696D30DA2653E0ED00F44246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		696D30DC2653E0ED00F44246 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		696D30DE2653E0ED00F44246 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		696D30E12653E0ED00F44246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		696D30E42653E0ED00F44246 /* Forkify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Forkify.xcdatamodel; sourceTree = "<group>"; };
 		696D30E62653E0EF00F44246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +69,9 @@
 		696D311C2653E62B00F44246 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		696D311E2653E63400F44246 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		696D31202653E88F00F44246 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		696D31232653F08900F44246 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		696D312526540A7C00F44246 /* PrivateJi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateJi.swift; sourceTree = "<group>"; };
+		696D312726540CB800F44246 /* HTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
 		8FD84F9CE42C577714054D52 /* Pods-ForkifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForkifyTests.debug.xcconfig"; path = "Target Support Files/Pods-ForkifyTests/Pods-ForkifyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		91EC7EC6EF76FE7431E79741 /* Pods-Forkify-ForkifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forkify-ForkifyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Forkify-ForkifyUITests/Pods-Forkify-ForkifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96F949CD8EC9966085E4FB97 /* Pods-Forkify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forkify.release.xcconfig"; path = "Target Support Files/Pods-Forkify/Pods-Forkify.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,12 +145,12 @@
 		696D30D92653E0ED00F44246 /* Forkify */ = {
 			isa = PBXGroup;
 			children = (
-				696D31182653E5FA00F44246 /* Netwroking */,
 				696D310D2653E4CC00F44246 /* AppDelegate */,
 				696D310E2653E4D700F44246 /* Controllers */,
 				696D31112653E4FD00F44246 /* CoreData */,
 				696D31122653E52100F44246 /* Extensions */,
 				696D310F2653E4E700F44246 /* Models */,
+				696D31182653E5FA00F44246 /* Netwroking */,
 				696D31152653E53C00F44246 /* PrivatePods */,
 				696D31162653E54500F44246 /* Resources */,
 				696D31172653E56400F44246 /* Storyboards */,
@@ -185,7 +189,7 @@
 		696D310E2653E4D700F44246 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				696D30DE2653E0ED00F44246 /* ViewController.swift */,
+				696D31222653F06100F44246 /* Home */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -223,6 +227,7 @@
 		696D31152653E53C00F44246 /* PrivatePods */ = {
 			isa = PBXGroup;
 			children = (
+				696D312526540A7C00F44246 /* PrivateJi.swift */,
 			);
 			path = PrivatePods;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				696D31192653E60300F44246 /* Base */,
+				696D312726540CB800F44246 /* HTMLParser.swift */,
 			);
 			path = Netwroking;
 			sourceTree = "<group>";
@@ -262,6 +268,14 @@
 				696D31202653E88F00F44246 /* Constants.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		696D31222653F06100F44246 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				696D31232653F08900F44246 /* HomeVC.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		8EAA59D5A2491CB0DC2CF131 /* Frameworks */ = {
@@ -512,10 +526,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				696D312826540CB800F44246 /* HTMLParser.swift in Sources */,
 				696D311B2653E61B00F44246 /* TargetType.swift in Sources */,
-				696D30DF2653E0ED00F44246 /* ViewController.swift in Sources */,
 				696D30DB2653E0ED00F44246 /* AppDelegate.swift in Sources */,
 				696D30E52653E0ED00F44246 /* Forkify.xcdatamodeld in Sources */,
+				696D31242653F08900F44246 /* HomeVC.swift in Sources */,
+				696D312626540A7C00F44246 /* PrivateJi.swift in Sources */,
 				696D311D2653E62B00F44246 /* BaseResponse.swift in Sources */,
 				696D311F2653E63400F44246 /* BaseAPI.swift in Sources */,
 				696D31142653E52100F44246 /* UIExtensions.swift in Sources */,
