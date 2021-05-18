@@ -14,14 +14,11 @@ class RecipeTableCell: UITableViewCell {
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var recipePublisherNameLabel: UILabel!
     
-//    // MARK:- Configure View
-//    func configureView(repo:RepositoryModel) {
-//        let owner = repo.owner
-//        ownerImage.getImage(from: owner?.avatarUrl ?? "", id: owner?.id ?? Int())
-//        ownerNameLabel.text = owner?.login
-//        repoNameLabel.text =  repo.name
-//    }
+    // MARK:- Configure View
+    func configureView(recipe:RecipeModel) {
+        recipeImage.SetImage(link: recipe.image_url ?? "")
+        recipeTitleLabel.text = recipe.title ?? ""
+        recipePublisherNameLabel.text = recipe.publisher ?? ""
+    }
 
-    
-    
 }

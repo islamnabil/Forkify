@@ -13,7 +13,7 @@ class BaseResponse<T: Codable>: Codable {
     
     enum CodingKeys: String, CodingKey {
         case status = "status"
-        case data = "data"
+        case data = "recipes"
     }
     
 }

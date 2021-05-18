@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SDWebImage
 import PKHUD
 
 class BaseAPI<T: TargetType> {
@@ -72,5 +73,15 @@ class BaseAPI<T: TargetType> {
         case .requestParameters(parameters: let parameters, encoding: let encoding):
             return (parameters, encoding)
         }
+    }
+}
+
+
+extension UIImageView {
+    
+    func SetImage(link:String) {
+        let url = URL(string:link )
+        self.backgroundColor = #colorLiteral(red: 0.8115878807, green: 0.8115878807, blue: 0.8115878807, alpha: 1)
+        self.sd_setImage(with: url, completed: nil)
     }
 }
