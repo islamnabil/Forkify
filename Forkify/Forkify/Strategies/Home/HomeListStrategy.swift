@@ -13,13 +13,13 @@ import UIKit
     func tableView(cellForRowAt indexPath:IndexPath) -> UITableViewCell
     func tableView(didSelectRowAt indexPath: IndexPath)
     func numberOfRows() -> Int
-    func getData()
+    func getData(view:UIView)
 }
 
 
 enum HomeListStrategiesType {
     case meals
-
+    
     func strategy(tableView:UITableView) -> HomeListStrategyProtocol {
         switch self {
         case .meals:
@@ -56,8 +56,8 @@ class HomeStrategy {
         return strategy?.tableCellHeight ?? 0.0
     }
     
-    func getData() {
-        strategy?.getData()
+    func getData(view:UIView){
+        strategy?.getData(view:view)
     }
     
 }

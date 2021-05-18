@@ -19,7 +19,7 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         configureTableView()
         strategy.setStrategy(strategy: .meals, tableView: MealsRecipesTableView)
-        strategy.getData()
+        strategy.getData(view: self.view)
     }
     
     //MARK:- Private Methods

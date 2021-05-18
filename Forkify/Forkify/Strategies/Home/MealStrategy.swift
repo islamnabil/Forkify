@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class MealStrategy: HomeListStrategyProtocol {
     
@@ -35,9 +36,15 @@ class MealStrategy: HomeListStrategyProtocol {
     }
     
     
-    func getData() {
-        meals = HTMLParser(link: "https://forkify-api.herokuapp.com/phrases.html", path: "/body/div/ul").parse()
-        tableView.reloadData()
+    func getData(view:UIView) {
+        HUD.show(.progress)
+        DispatchQueue.global().async {
+            self.meals = HTMLParser(link: "https://forkify-api.herokuapp.com/phrases.html", path: "/body/div/ul").parse()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                HUD.hide()
+            }
+        }
     }
 
     
