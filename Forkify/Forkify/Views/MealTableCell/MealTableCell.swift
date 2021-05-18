@@ -18,7 +18,7 @@ class MealTableCell: UITableViewCell {
     
     // MARK:- Configure View
     func configureView(name:String) {
-        nameLabel.text = name
+        nameLabel.text = name.capitalized
     }
     
 }

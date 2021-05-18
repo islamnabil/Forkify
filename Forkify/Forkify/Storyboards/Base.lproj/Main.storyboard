@@ -43,6 +43,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Forkify" id="6Gt-Sd-3uu"/>
+                    <connections>
+                        <outlet property="MealsRecipesTableView" destination="tKL-C0-pOl" id="ZFV-a0-JVm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zp6-Rn-E2d" sceneMemberID="firstResponder"/>
             </objects>
