@@ -21,37 +21,27 @@ import UIKit
 enum HomeListStrategiesType {
     case meals
     case recipes
-    
-    func strategy(meal:String = "", view:UIView = UIView(),tableView:UITableView) -> HomeListStrategyProtocol {
-        switch self {
-        case .meals:
-            return MealStrategy(view: view, tableView: tableView)
-        case .recipes:
-            return RecipeStrategy(meal: meal, view: view, tableView: tableView)
-        }
-    }
-
 }
 
 
 
-class HomeStrategy {
+class HomeStrategyManager {
     // MARK: - Singleton
     private init(){}
     
     // Access the singleton instance
-    static var shared = HomeStrategy()
+    static var shared = HomeStrategyManager()
     
     var strategy:HomeListStrategyProtocol?
     
-    func setStrategy(meal:String = "", view:UIView = UIView(), strategy:HomeListStrategiesType, tableView:UITableView) {
+
+    func setStrategy(view:UIView, strategy:HomeListStrategiesType, tableView:UITableView, meal:String = "", searchText:String = "") {
         switch strategy {
         case .meals:
-            self.strategy = strategy.strategy(tableView: tableView)
+            self.strategy = MealStrategy(view: view, tableView: tableView)
         case .recipes:
-            self.strategy = strategy.strategy(meal: meal, view: view, tableView: tableView)
+             self.strategy = RecipeStrategy(meal: meal, view: view, tableView: tableView)
         }
-        
         self.strategy?.getData()
     }
     
@@ -73,6 +63,12 @@ class HomeStrategy {
     
     func getData(){
         strategy?.getData()
+    }
+    
+    func searchMeals(searchText:String){
+        if let mealsStrategy = strategy as? MealStrategy {
+            mealsStrategy.searchMeals(searchText: searchText)
+        }
     }
     
 }

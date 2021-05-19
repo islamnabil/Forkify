@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="139" width="414" height="723"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Search for recipes" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ej7-HB-3VB">
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Search for recipes" translatesAutoresizingMaskIntoConstraints="NO" id="ej7-HB-3VB">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <scopeButtonTitles>
@@ -45,6 +45,7 @@
                     <navigationItem key="navigationItem" title="Forkify" id="6Gt-Sd-3uu"/>
                     <connections>
                         <outlet property="MealsRecipesTableView" destination="tKL-C0-pOl" id="ZFV-a0-JVm"/>
+                        <outlet property="searchBar" destination="ej7-HB-3VB" id="xch-gl-DkW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zp6-Rn-E2d" sceneMemberID="firstResponder"/>

@@ -13,6 +13,7 @@ class MealStrategy: HomeListStrategyProtocol {
     var tableView: UITableView
     var tableCellHeight: CGFloat = 50
     var meals = [String]()
+    var CachedMeals = [String]()
     
     init(view:UIView,tableView:UITableView) {
         self.tableView = tableView
@@ -29,7 +30,7 @@ class MealStrategy: HomeListStrategyProtocol {
     }
     
     func tableView(didSelectRowAt indexPath: IndexPath) {
-        HomeStrategy.shared.setStrategy(meal: meals[indexPath.row].addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "", view: view, strategy: .recipes, tableView: tableView)
+        HomeStrategyManager.shared.setStrategy(view: view, strategy: .recipes, tableView: tableView, meal: meals[indexPath.row].addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "")
     }
     
     func numberOfRows() -> Int {
@@ -38,10 +39,29 @@ class MealStrategy: HomeListStrategyProtocol {
     
     
     func getData() {
-        HTMLParser(link: "https://forkify-api.herokuapp.com/phrases.html", path: "/body/div/ul").parse(completion: { (respose) in
-            self.meals = respose
+        if CachedMeals.count == 0 {
+            HTMLParser(link: "https://forkify-api.herokuapp.com/phrases.html", path: "/body/div/ul").parse(completion: { (respose) in
+                self.meals = respose
+                self.CachedMeals = respose
+                self.tableView.reloadData()
+            })
+        }else {
+            meals = CachedMeals
             self.tableView.reloadData()
-        })
+        }
+    }
+    
+    
+    func searchMeals(searchText:String){
+        if !searchText.isEmpty {
+            meals.removeAll()
+            meals =  CachedMeals.filter({ meal in
+                return meal.lowercased().hasPrefix(searchText.lowercased())
+            })
+            self.tableView.reloadData()
+        }else {
+            getData()
+        }
     }
     
 }
