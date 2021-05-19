@@ -10,20 +10,24 @@ import UIKit
  protocol HomeListStrategyProtocol {
     var tableView:UITableView {get}
     var tableCellHeight:CGFloat {get}
+    var view:UIView {get}
     func tableView(cellForRowAt indexPath:IndexPath) -> UITableViewCell
     func tableView(didSelectRowAt indexPath: IndexPath)
     func numberOfRows() -> Int
-    func getData(view:UIView)
+    func getData()
 }
 
 
 enum HomeListStrategiesType {
     case meals
+    case recipes
     
-    func strategy(tableView:UITableView) -> HomeListStrategyProtocol {
+    func strategy(meal:String = "", view:UIView = UIView(),tableView:UITableView) -> HomeListStrategyProtocol {
         switch self {
         case .meals:
-            return MealStrategy(tableView: tableView)
+            return MealStrategy(view: view, tableView: tableView)
+        case .recipes:
+            return RecipeStrategy(meal: meal, view: view, tableView: tableView)
         }
     }
 
@@ -40,24 +44,35 @@ class HomeStrategy {
     
     var strategy:HomeListStrategyProtocol?
     
-    func setStrategy(strategy:HomeListStrategiesType, tableView:UITableView) {
-        self.strategy = strategy.strategy(tableView: tableView)
+    func setStrategy(meal:String = "", view:UIView = UIView(), strategy:HomeListStrategiesType, tableView:UITableView) {
+        switch strategy {
+        case .meals:
+            self.strategy = strategy.strategy(tableView: tableView)
+        case .recipes:
+            self.strategy = strategy.strategy(meal: meal, view: view, tableView: tableView)
+        }
+        
+        self.strategy?.getData()
     }
     
      func numberOfRows() -> Int {
         return strategy?.numberOfRows() ?? 0
     }
     
-    func tableViewCell(cellForRowAt:IndexPath) -> UITableViewCell {
-        return strategy?.tableView(cellForRowAt: cellForRowAt) ?? UITableViewCell()
+    func tableViewCell(cellForRowAt indexPath:IndexPath) -> UITableViewCell {
+        return strategy?.tableView(cellForRowAt: indexPath) ?? UITableViewCell()
     }
     
-    func tableView(heightForRowAt:IndexPath) -> CGFloat {
+    func tableView() -> CGFloat {
         return strategy?.tableCellHeight ?? 0.0
     }
     
-    func getData(view:UIView){
-        strategy?.getData(view:view)
+    func tableView(didSelectRowAt indexPath:IndexPath){
+        strategy?.tableView(didSelectRowAt: indexPath)
+    }
+    
+    func getData(){
+        strategy?.getData()
     }
     
 }

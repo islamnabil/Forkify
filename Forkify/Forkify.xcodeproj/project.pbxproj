@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1873C0D88B0EAD194B92AE9B /* Pods_Forkify_ForkifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9058D8FDD8653914AE4CFE /* Pods_Forkify_ForkifyUITests.framework */; };
+		695A5B8826550D4100DC24D6 /* HomeNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B8726550D4100DC24D6 /* HomeNetworking.swift */; };
+		695A5B8A26550D4A00DC24D6 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B8926550D4A00DC24D6 /* HomeAPI.swift */; };
+		695A5B8C265510BF00DC24D6 /* RecipeStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B8B265510BF00DC24D6 /* RecipeStrategy.swift */; };
 		696D30DB2653E0ED00F44246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D30DA2653E0ED00F44246 /* AppDelegate.swift */; };
 		696D30DD2653E0ED00F44246 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D30DC2653E0ED00F44246 /* SceneDelegate.swift */; };
 		696D30E22653E0ED00F44246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696D30E02653E0ED00F44246 /* Main.storyboard */; };
@@ -18,7 +21,6 @@
 		696D31002653E0F000F44246 /* ForkifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D30FF2653E0F000F44246 /* ForkifyUITests.swift */; };
 		696D31142653E52100F44246 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D31132653E52100F44246 /* UIExtensions.swift */; };
 		696D311B2653E61B00F44246 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D311A2653E61B00F44246 /* TargetType.swift */; };
-		696D311D2653E62B00F44246 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D311C2653E62B00F44246 /* BaseResponse.swift */; };
 		696D311F2653E63400F44246 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D311E2653E63400F44246 /* BaseAPI.swift */; };
 		696D31212653E88F00F44246 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D31202653E88F00F44246 /* Constants.swift */; };
 		696D31242653F08900F44246 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D31232653F08900F44246 /* HomeVC.swift */; };
@@ -57,6 +59,9 @@
 		0A403671F1484E215DF55C69 /* Pods_Forkify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forkify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7EC1FA567B1C0AB2B75FC5 /* Pods-Forkify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forkify.debug.xcconfig"; path = "Target Support Files/Pods-Forkify/Pods-Forkify.debug.xcconfig"; sourceTree = "<group>"; };
 		673EF2C1EB63261F7CAE8053 /* Pods-ForkifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForkifyTests.release.xcconfig"; path = "Target Support Files/Pods-ForkifyTests/Pods-ForkifyTests.release.xcconfig"; sourceTree = "<group>"; };
+		695A5B8726550D4100DC24D6 /* HomeNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworking.swift; sourceTree = "<group>"; };
+		695A5B8926550D4A00DC24D6 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
+		695A5B8B265510BF00DC24D6 /* RecipeStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStrategy.swift; sourceTree = "<group>"; };
 		696D30D72653E0ED00F44246 /* Forkify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forkify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		696D30DA2653E0ED00F44246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		696D30DC2653E0ED00F44246 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +78,6 @@
 		696D31012653E0F000F44246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		696D31132653E52100F44246 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		696D311A2653E61B00F44246 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
-		696D311C2653E62B00F44246 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		696D311E2653E63400F44246 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		696D31202653E88F00F44246 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		696D31232653F08900F44246 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -132,6 +136,15 @@
 				673EF2C1EB63261F7CAE8053 /* Pods-ForkifyTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		695A5B8626550C6900DC24D6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				695A5B8726550D4100DC24D6 /* HomeNetworking.swift */,
+				695A5B8926550D4A00DC24D6 /* HomeAPI.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		696D30CE2653E0ED00F44246 = {
@@ -271,6 +284,7 @@
 		696D31182653E5FA00F44246 /* Netwroking */ = {
 			isa = PBXGroup;
 			children = (
+				695A5B8626550C6900DC24D6 /* Home */,
 				696D31192653E60300F44246 /* Base */,
 				696D312726540CB800F44246 /* HTMLParser.swift */,
 			);
@@ -281,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				696D311A2653E61B00F44246 /* TargetType.swift */,
-				696D311C2653E62B00F44246 /* BaseResponse.swift */,
 				696D311E2653E63400F44246 /* BaseAPI.swift */,
 				696D31202653E88F00F44246 /* Constants.swift */,
 			);
@@ -309,6 +322,7 @@
 			children = (
 				696D312B26540ECC00F44246 /* HomeListStrategy.swift */,
 				696D312D2654139100F44246 /* MealStrategy.swift */,
+				695A5B8B265510BF00DC24D6 /* RecipeStrategy.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -584,6 +598,8 @@
 				696D312826540CB800F44246 /* HTMLParser.swift in Sources */,
 				696D3132265415EC00F44246 /* MealTableCell.swift in Sources */,
 				696D311B2653E61B00F44246 /* TargetType.swift in Sources */,
+				695A5B8C265510BF00DC24D6 /* RecipeStrategy.swift in Sources */,
+				695A5B8826550D4100DC24D6 /* HomeNetworking.swift in Sources */,
 				696D30DB2653E0ED00F44246 /* AppDelegate.swift in Sources */,
 				696D30E52653E0ED00F44246 /* Forkify.xcdatamodeld in Sources */,
 				696D313B26544C3100F44246 /* RecipeModel.swift in Sources */,
@@ -592,7 +608,7 @@
 				696D312C26540ECC00F44246 /* HomeListStrategy.swift in Sources */,
 				696D313726544B5400F44246 /* RecipeTableCell.swift in Sources */,
 				696D312626540A7C00F44246 /* PrivateJi.swift in Sources */,
-				696D311D2653E62B00F44246 /* BaseResponse.swift in Sources */,
+				695A5B8A26550D4A00DC24D6 /* HomeAPI.swift in Sources */,
 				696D311F2653E63400F44246 /* BaseAPI.swift in Sources */,
 				696D31142653E52100F44246 /* UIExtensions.swift in Sources */,
 				696D30DD2653E0ED00F44246 /* SceneDelegate.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PKHUD
 
 class HTMLParser {
     private var link:String
@@ -16,7 +17,14 @@ class HTMLParser {
         self.path = path
     }
     
-    func parse() -> [String] {
-        return PrivateJi.shared.parseHTML(link: link, path: path)
+    func parse(completion: @escaping ([String]) -> () ) {
+        HUD.show(.progress)
+        DispatchQueue.global().async {
+            let response = PrivateJi.shared.parseHTML(link: self.link, path: self.path)
+            DispatchQueue.main.async {
+                HUD.hide()
+                completion(response)
+            }
+        }
     }
 }

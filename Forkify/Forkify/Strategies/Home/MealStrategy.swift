@@ -9,14 +9,15 @@ import UIKit
 import PKHUD
 
 class MealStrategy: HomeListStrategyProtocol {
-    
+    var view: UIView
     var tableView: UITableView
     var tableCellHeight: CGFloat = 50
     var meals = [String]()
     
-    init(tableView:UITableView) {
+    init(view:UIView,tableView:UITableView) {
         self.tableView = tableView
         self.tableView.register(UINib(nibName: "MealTableCell", bundle: nil), forCellReuseIdentifier: "MealTableCell")
+        self.view = view
     }
     
     
@@ -28,7 +29,7 @@ class MealStrategy: HomeListStrategyProtocol {
     }
     
     func tableView(didSelectRowAt indexPath: IndexPath) {
-        
+        HomeStrategy.shared.setStrategy(meal: meals[indexPath.row], view: view, strategy: .recipes, tableView: tableView)
     }
     
     func numberOfRows() -> Int {
@@ -36,16 +37,11 @@ class MealStrategy: HomeListStrategyProtocol {
     }
     
     
-    func getData(view:UIView) {
-        HUD.show(.progress)
-        DispatchQueue.global().async {
-            self.meals = HTMLParser(link: "https://forkify-api.herokuapp.com/phrases.html", path: "/body/div/ul").parse()
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                HUD.hide()
-            }
-        }
+    func getData() {
+        HTMLParser(link: "https://forkify-api.herokuapp.com/phrases.html", path: "/body/div/ul").parse(completion: { (respose) in
+            self.meals = respose
+            self.tableView.reloadData()
+        })
     }
-
     
 }

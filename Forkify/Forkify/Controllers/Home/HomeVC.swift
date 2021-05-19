@@ -10,6 +10,7 @@ import UIKit
 class HomeVC: UIViewController {
     //MARK:- Properties
     var strategy = HomeStrategy.shared
+   
     
     // MARK:- IBoutlets
     @IBOutlet weak var MealsRecipesTableView: UITableView!
@@ -19,7 +20,6 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         configureTableView()
         strategy.setStrategy(strategy: .meals, tableView: MealsRecipesTableView)
-        strategy.getData(view: self.view)
     }
     
     //MARK:- Private Methods
@@ -46,11 +46,11 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return strategy.tableView(heightForRowAt: indexPath)
+        return strategy.tableView()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        strategy.tableView(didSelectRowAt: indexPath)
     }
     
 }

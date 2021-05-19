@@ -17,6 +17,5 @@ struct RecipeModel:Codable {
     var source_url: String?
     var recipe_id: String?
     var image_url:String?
-    var social_rank: Int?
     var publisher_url: String?
 }
