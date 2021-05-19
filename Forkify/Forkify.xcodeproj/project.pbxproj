@@ -19,6 +19,8 @@
 		695A5B9726554C9A00DC24D6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B9426554C7400DC24D6 /* CoreDataManager.swift */; };
 		695A5B9A265573E600DC24D6 /* RecipeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B99265573E600DC24D6 /* RecipeDetailsVC.swift */; };
 		695A5B9B265573E600DC24D6 /* RecipeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B99265573E600DC24D6 /* RecipeDetailsVC.swift */; };
+		695A5B9D265577F000DC24D6 /* RecipeDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B9C265577F000DC24D6 /* RecipeDetailsModel.swift */; };
+		695A5B9E265577F000DC24D6 /* RecipeDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B9C265577F000DC24D6 /* RecipeDetailsModel.swift */; };
 		696D30DB2653E0ED00F44246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D30DA2653E0ED00F44246 /* AppDelegate.swift */; };
 		696D30DD2653E0ED00F44246 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D30DC2653E0ED00F44246 /* SceneDelegate.swift */; };
 		696D30E22653E0ED00F44246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696D30E02653E0ED00F44246 /* Main.storyboard */; };
@@ -74,6 +76,7 @@
 		695A5B8F26554C5300DC24D6 /* SearchHistory+CoreDataProperties copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchHistory+CoreDataProperties copy.swift"; sourceTree = "<group>"; };
 		695A5B9426554C7400DC24D6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		695A5B99265573E600DC24D6 /* RecipeDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsVC.swift; sourceTree = "<group>"; };
+		695A5B9C265577F000DC24D6 /* RecipeDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsModel.swift; sourceTree = "<group>"; };
 		696D30D72653E0ED00F44246 /* Forkify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forkify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		696D30DA2653E0ED00F44246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		696D30DC2653E0ED00F44246 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -256,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				696D313A26544C3100F44246 /* RecipeModel.swift */,
+				695A5B9C265577F000DC24D6 /* RecipeDetailsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -634,6 +638,7 @@
 				695A5B9226554C5300DC24D6 /* SearchHistory+CoreDataProperties copy.swift in Sources */,
 				695A5B8C265510BF00DC24D6 /* RecipeStrategy.swift in Sources */,
 				695A5B8826550D4100DC24D6 /* HomeNetworking.swift in Sources */,
+				695A5B9D265577F000DC24D6 /* RecipeDetailsModel.swift in Sources */,
 				696D30DB2653E0ED00F44246 /* AppDelegate.swift in Sources */,
 				696D30E52653E0ED00F44246 /* Forkify.xcdatamodeld in Sources */,
 				696D313B26544C3100F44246 /* RecipeModel.swift in Sources */,
@@ -656,6 +661,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				695A5B9E265577F000DC24D6 /* RecipeDetailsModel.swift in Sources */,
 				695A5B9126554C5300DC24D6 /* SearchHistory+CoreDataClass copy.swift in Sources */,
 				695A5B9326554C5300DC24D6 /* SearchHistory+CoreDataProperties copy.swift in Sources */,
 				695A5B9726554C9A00DC24D6 /* CoreDataManager.swift in Sources */,

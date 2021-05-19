@@ -20,8 +20,8 @@ extension HomeNetworking: TargetType {
     
     var path: String {
         switch self {
-        case .recipeSearch(let q):
-            return "search?q=\(q)"
+        case .recipeSearch:
+            return "search"
         case .recipeDetails:
             return "get"
         }
@@ -33,8 +33,10 @@ extension HomeNetworking: TargetType {
     
     var task: Task {
         switch self {
-        case .recipeSearch:
-            return .requestPlain
+        case .recipeSearch(let q):
+            return .requestParameters(parameters: [
+                "q":q
+            ], encoding: URLEncoding.default)
             
         case .recipeDetails(let rld):
             return .requestParameters(parameters: [

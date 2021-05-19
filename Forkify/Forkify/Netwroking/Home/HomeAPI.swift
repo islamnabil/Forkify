@@ -9,7 +9,7 @@ import UIKit
 
 protocol HomeAPIProtocol {
     func search(meal:String,view:UIView,completion: @escaping (Result<RecipesModel, NSError>) -> Void)
-    //func recipeDetails(recipe:String,view:UIView,completion: @escaping (Result<BaseResponse<RecipesModel>, NSError>) -> Void)
+    func recipeDetails(recipeId:String,view:UIView,completion: @escaping (Result<RecipeDetailsModel, NSError>) -> Void)
 }
 
 class HomeAPI: BaseAPI<HomeNetworking>, HomeAPIProtocol  {
@@ -19,4 +19,9 @@ class HomeAPI: BaseAPI<HomeNetworking>, HomeAPIProtocol  {
         }
     }
     
+    func recipeDetails(recipeId: String, view: UIView, completion: @escaping (Result<RecipeDetailsModel, NSError>) -> Void) {
+        fetchData(target: .recipeDetails(rld: recipeId), responseClass: RecipeDetailsModel.self, view: view) { (result) in
+            completion(result)
+        }
+    }
 }
