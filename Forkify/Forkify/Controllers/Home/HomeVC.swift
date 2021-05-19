@@ -56,7 +56,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        view.endEditing(true)
+        endEditing()
         strategy.tableView(didSelectRowAt: indexPath)
     }
     
@@ -77,6 +77,11 @@ extension HomeVC: UISearchBarDelegate {
 
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        endEditing()
+    }
+    
+    private func endEditing(){
+        searchBar.text?.removeAll()
         view.endEditing(true)
     }
     
