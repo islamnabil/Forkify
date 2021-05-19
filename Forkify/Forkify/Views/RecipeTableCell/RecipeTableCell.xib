@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CCq-Rb-kAD">
                         <rect key="frame" x="0.0" y="0.0" width="310" height="150"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5FQ-Kl-tEx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5FQ-Kl-tEx">
                                 <rect key="frame" x="10" y="35" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="9kx-qY-BwZ"/>
@@ -36,14 +36,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGO-aF-RLW">
                                 <rect key="frame" x="98" y="40" width="202" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="20S-29-fXy">
-                                        <rect key="frame" x="0.0" y="0.0" width="202" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="20S-29-fXy">
+                                        <rect key="frame" x="0.0" y="0.0" width="202" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Ktl-Gv-zc9"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repo Name " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TNI-2O-KUX">
-                                        <rect key="frame" x="0.0" y="34.5" width="202" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher name " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TNI-2O-KUX">
+                                        <rect key="frame" x="0.0" y="45" width="202" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -54,10 +57,10 @@
                                     <constraint firstItem="20S-29-fXy" firstAttribute="top" secondItem="UGO-aF-RLW" secondAttribute="top" id="HjX-MR-nVN"/>
                                     <constraint firstItem="TNI-2O-KUX" firstAttribute="leading" secondItem="UGO-aF-RLW" secondAttribute="leading" id="KIq-JW-s4n"/>
                                     <constraint firstAttribute="trailing" secondItem="TNI-2O-KUX" secondAttribute="trailing" id="KNT-gK-983"/>
-                                    <constraint firstItem="TNI-2O-KUX" firstAttribute="top" secondItem="20S-29-fXy" secondAttribute="bottom" priority="100" constant="10" id="MgI-kY-8pa"/>
                                     <constraint firstAttribute="trailing" secondItem="20S-29-fXy" secondAttribute="trailing" id="MrH-i2-vJ4"/>
                                     <constraint firstItem="20S-29-fXy" firstAttribute="leading" secondItem="UGO-aF-RLW" secondAttribute="leading" id="TMN-SS-lc4"/>
-                                    <constraint firstAttribute="bottom" secondItem="TNI-2O-KUX" secondAttribute="bottom" constant="15" id="oyt-IL-91P"/>
+                                    <constraint firstAttribute="bottom" secondItem="TNI-2O-KUX" secondAttribute="bottom" constant="5" id="oyt-IL-91P"/>
+                                    <constraint firstItem="TNI-2O-KUX" firstAttribute="top" secondItem="20S-29-fXy" secondAttribute="bottom" constant="5" id="qUU-QH-R36"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNf-1g-gmg">

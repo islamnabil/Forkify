@@ -29,7 +29,7 @@ class MealStrategy: HomeListStrategyProtocol {
     }
     
     func tableView(didSelectRowAt indexPath: IndexPath) {
-        HomeStrategy.shared.setStrategy(meal: meals[indexPath.row], view: view, strategy: .recipes, tableView: tableView)
+        HomeStrategy.shared.setStrategy(meal: meals[indexPath.row].addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "", view: view, strategy: .recipes, tableView: tableView)
     }
     
     func numberOfRows() -> Int {

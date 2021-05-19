@@ -80,8 +80,9 @@ class BaseAPI<T: TargetType> {
 extension UIImageView {
     
     func SetImage(link:String) {
-        let url = URL(string:link )
         self.backgroundColor = #colorLiteral(red: 0.8115878807, green: 0.8115878807, blue: 0.8115878807, alpha: 1)
-        self.sd_setImage(with: url, completed: nil)
+        if let url = link.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
+            self.sd_setImage(with: URL(string: url), completed: nil)
+        }
     }
 }
