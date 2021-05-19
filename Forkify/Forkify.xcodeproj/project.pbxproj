@@ -17,6 +17,8 @@
 		695A5B9326554C5300DC24D6 /* SearchHistory+CoreDataProperties copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B8F26554C5300DC24D6 /* SearchHistory+CoreDataProperties copy.swift */; };
 		695A5B9526554C7400DC24D6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B9426554C7400DC24D6 /* CoreDataManager.swift */; };
 		695A5B9726554C9A00DC24D6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B9426554C7400DC24D6 /* CoreDataManager.swift */; };
+		695A5B9A265573E600DC24D6 /* RecipeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B99265573E600DC24D6 /* RecipeDetailsVC.swift */; };
+		695A5B9B265573E600DC24D6 /* RecipeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B99265573E600DC24D6 /* RecipeDetailsVC.swift */; };
 		696D30DB2653E0ED00F44246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D30DA2653E0ED00F44246 /* AppDelegate.swift */; };
 		696D30DD2653E0ED00F44246 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D30DC2653E0ED00F44246 /* SceneDelegate.swift */; };
 		696D30E22653E0ED00F44246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696D30E02653E0ED00F44246 /* Main.storyboard */; };
@@ -71,6 +73,7 @@
 		695A5B8E26554C5300DC24D6 /* SearchHistory+CoreDataClass copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchHistory+CoreDataClass copy.swift"; sourceTree = "<group>"; };
 		695A5B8F26554C5300DC24D6 /* SearchHistory+CoreDataProperties copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchHistory+CoreDataProperties copy.swift"; sourceTree = "<group>"; };
 		695A5B9426554C7400DC24D6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		695A5B99265573E600DC24D6 /* RecipeDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsVC.swift; sourceTree = "<group>"; };
 		696D30D72653E0ED00F44246 /* Forkify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forkify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		696D30DA2653E0ED00F44246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		696D30DC2653E0ED00F44246 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +168,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		695A5B98265573CB00DC24D6 /* RecipeDetails */ = {
+			isa = PBXGroup;
+			children = (
+				695A5B99265573E600DC24D6 /* RecipeDetailsVC.swift */,
+			);
+			path = RecipeDetails;
+			sourceTree = "<group>";
+		};
 		696D30CE2653E0ED00F44246 = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +246,7 @@
 		696D310E2653E4D700F44246 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				695A5B98265573CB00DC24D6 /* RecipeDetails */,
 				696D31222653F06100F44246 /* Home */,
 			);
 			path = Controllers;
@@ -632,6 +644,7 @@
 				696D313726544B5400F44246 /* RecipeTableCell.swift in Sources */,
 				696D312626540A7C00F44246 /* PrivateJi.swift in Sources */,
 				695A5B8A26550D4A00DC24D6 /* HomeAPI.swift in Sources */,
+				695A5B9A265573E600DC24D6 /* RecipeDetailsVC.swift in Sources */,
 				696D311F2653E63400F44246 /* BaseAPI.swift in Sources */,
 				696D31142653E52100F44246 /* UIExtensions.swift in Sources */,
 				696D30DD2653E0ED00F44246 /* SceneDelegate.swift in Sources */,
@@ -646,6 +659,7 @@
 				695A5B9126554C5300DC24D6 /* SearchHistory+CoreDataClass copy.swift in Sources */,
 				695A5B9326554C5300DC24D6 /* SearchHistory+CoreDataProperties copy.swift in Sources */,
 				695A5B9726554C9A00DC24D6 /* CoreDataManager.swift in Sources */,
+				695A5B9B265573E600DC24D6 /* RecipeDetailsVC.swift in Sources */,
 				696D30F52653E0EF00F44246 /* ForkifyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
