@@ -8,7 +8,9 @@
 import UIKit
 
 class RecipeDetailsVC: UIViewController {
-
+    
+    let api:HomeAPIProtocol = HomeAPI()
+    
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var ingredientsTableView: UITableView!
@@ -16,7 +18,6 @@ class RecipeDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 
@@ -25,3 +26,4 @@ class RecipeDetailsVC: UIViewController {
     }
     
 }
+
