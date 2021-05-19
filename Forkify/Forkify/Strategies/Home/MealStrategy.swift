@@ -30,6 +30,7 @@ class MealStrategy: HomeListStrategyProtocol {
     }
     
     func tableView(didSelectRowAt indexPath: IndexPath) {
+        CoreDataManager.shared.addSearch(searchText: meals[indexPath.row])
         HomeStrategyManager.shared.setStrategy(view: view, strategy: .recipes, tableView: tableView, meal: meals[indexPath.row].addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "")
     }
     
@@ -62,6 +63,11 @@ class MealStrategy: HomeListStrategyProtocol {
         }else {
             getData()
         }
+    }
+    
+    func getLastSearches()  {
+        meals = CoreDataManager.shared.getAllSearchHistory().reversed()
+        self.tableView.reloadData()
     }
     
 }

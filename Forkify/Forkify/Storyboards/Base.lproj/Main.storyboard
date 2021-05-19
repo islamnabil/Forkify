@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="139" width="414" height="723"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Search for recipes" translatesAutoresizingMaskIntoConstraints="NO" id="ej7-HB-3VB">
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Search for meals" translatesAutoresizingMaskIntoConstraints="NO" id="ej7-HB-3VB">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <scopeButtonTitles>

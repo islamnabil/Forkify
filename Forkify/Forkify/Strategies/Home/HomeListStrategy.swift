@@ -33,7 +33,8 @@ class HomeStrategyManager {
     static var shared = HomeStrategyManager()
     
     var strategy:HomeListStrategyProtocol?
-    
+    var view = UIView()
+    var tableView = UITableView()
 
     func setStrategy(view:UIView, strategy:HomeListStrategiesType, tableView:UITableView, meal:String = "", searchText:String = "") {
         switch strategy {
@@ -43,6 +44,8 @@ class HomeStrategyManager {
              self.strategy = RecipeStrategy(meal: meal, view: view, tableView: tableView)
         }
         self.strategy?.getData()
+        self.view = view
+        self.tableView = tableView
     }
     
      func numberOfRows() -> Int {
@@ -53,7 +56,7 @@ class HomeStrategyManager {
         return strategy?.tableView(cellForRowAt: indexPath) ?? UITableViewCell()
     }
     
-    func tableView() -> CGFloat {
+    func tableViewCellHeight() -> CGFloat {
         return strategy?.tableCellHeight ?? 0.0
     }
     
@@ -67,7 +70,15 @@ class HomeStrategyManager {
     
     func searchMeals(searchText:String){
         if let mealsStrategy = strategy as? MealStrategy {
+            mealsStrategy.getData()
             mealsStrategy.searchMeals(searchText: searchText)
+        }
+    }
+    
+    func getSearchSuggestions() {
+        self.strategy = MealStrategy(view: view, tableView: tableView)
+        if let mealsStrategy = strategy as? MealStrategy {
+            mealsStrategy.getLastSearches()
         }
     }
     

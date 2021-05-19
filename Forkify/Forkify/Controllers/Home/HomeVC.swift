@@ -52,10 +52,11 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return strategy.tableView()
+        return strategy.tableViewCellHeight()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        view.endEditing(true)
         strategy.tableView(didSelectRowAt: indexPath)
     }
     
@@ -71,10 +72,7 @@ extension HomeVC: UISearchBarDelegate {
     
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        guard strategy.strategy is MealStrategy else {
-            strategy.setStrategy(view: self.view, strategy: .meals, tableView: MealsRecipesTableView)
-            return
-        }
+        strategy.getSearchSuggestions()
     }
 
     
