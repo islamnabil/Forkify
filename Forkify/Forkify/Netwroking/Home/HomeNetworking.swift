@@ -10,7 +10,7 @@ import Alamofire
 
 enum HomeNetworking {
     case recipeSearch(q:String)
-    case recipeDetails(rld:String)
+    case recipeDetails(rId:String)
 }
 
 extension HomeNetworking: TargetType {
@@ -38,9 +38,9 @@ extension HomeNetworking: TargetType {
                 "q":q
             ], encoding: URLEncoding.default)
             
-        case .recipeDetails(let rld):
+        case .recipeDetails(let rId):
             return .requestParameters(parameters: [
-                "rld":rld
+                "rId":rId
             ], encoding: URLEncoding.default)
         }
     }

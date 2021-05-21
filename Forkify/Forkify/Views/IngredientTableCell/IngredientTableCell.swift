@@ -24,7 +24,7 @@ class IngredientTableCell: UITableViewCell {
     }
     
     func configureView(ingredient:String) {
-        ingredientLabel.text = ingredient
+        ingredientLabel.text = " - \(ingredient)"
     }
     
 }

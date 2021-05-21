@@ -8,7 +8,7 @@
 import UIKit
 import PKHUD
 
-class RecipeStrategy: HomeListStrategyProtocol {
+class RecipeStrategy: HomeListStrategyProtocol, RecipeDetailsRoute {
     var view:UIView
     var tableView: UITableView
     var tableCellHeight: CGFloat = 120
@@ -31,7 +31,8 @@ class RecipeStrategy: HomeListStrategyProtocol {
     }
     
     func tableView(didSelectRowAt indexPath: IndexPath) {
-        
+        let recipeDetailsVC = openRecipeDetails(recipeId: recipes.recipes?[indexPath.row].recipe_id ?? "")
+        tableView.findViewController()?.navigationController?.pushViewController(recipeDetailsVC, animated: true)
     }
     
     func numberOfRows() -> Int {

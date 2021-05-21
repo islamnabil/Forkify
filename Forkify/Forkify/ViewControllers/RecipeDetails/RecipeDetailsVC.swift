@@ -12,7 +12,7 @@ class RecipeDetailsVC: UIViewController {
     //MARK:- Properties
     private let api:HomeAPIProtocol = HomeAPI()
     private lazy var recipeDetails = RecipeDetailsModel()
-    private lazy var recipeId = String()
+    var recipeId = String()
     
     //MARK:- IBOutlets
     @IBOutlet weak var recipeImage: UIImageView!
@@ -22,7 +22,7 @@ class RecipeDetailsVC: UIViewController {
     //MARK:- View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViews()
+        configureTableView()
         getRecipeDetailsAPI()
     }
     
@@ -38,13 +38,16 @@ class RecipeDetailsVC: UIViewController {
     
     //MARK:- Private Methods
     private func setViews(){
-        configureTableView()
+        recipeImage.SetImage(link: recipeDetails.recipe?.image_url ?? "")
+        recipeTitleLabel.text = recipeDetails.recipe?.title ?? ""
+        ingredientsTableView.reloadData()
     }
     
     /// configureTableView : `delegate`, `dataSource`
     /// and make `separatorStyle` to be none instead of singleLine
     private func configureTableView() {
-        ingredientsTableView.delegate = self
+        self.ingredientsTableView.register(UINib(nibName: "IngredientTableCell", bundle: nil), forCellReuseIdentifier: "IngredientTableCell")
+        ingredientsTableView.dataSource = self
         ingredientsTableView.separatorStyle = .none
     }
     
@@ -52,21 +55,21 @@ class RecipeDetailsVC: UIViewController {
 
 
 // MARK: - UITableView Delegate
-extension RecipeDetailsVC: UITableViewDelegate {
+extension RecipeDetailsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipeDetails.ingredients?.count ?? 0
+        return recipeDetails.recipe?.ingredients?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell = tableView.dequeueReusableCell(withIdentifier: String(describing: IngredientTableCell.self),for: indexPath) as! IngredientTableCell
-        cell.configureView(ingredient: recipeDetails.ingredients?[indexPath.row] ?? "")
+        cell.configureView(ingredient: recipeDetails.recipe?.ingredients?[indexPath.row] ?? "")
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 80
     }
     
 }
@@ -74,11 +77,12 @@ extension RecipeDetailsVC: UITableViewDelegate {
 // MARK: - APIs
 extension RecipeDetailsVC {
     func getRecipeDetailsAPI() {
+        print(recipeId)
         api.recipeDetails(recipeId: recipeId, view: self.view) { (result) in
             switch result {
             case .success(let resposse):
                 self.recipeDetails = resposse
-                self.ingredientsTableView.reloadData()
+                self.setViews()
             case .failure(let error):
                 print(error)
             }

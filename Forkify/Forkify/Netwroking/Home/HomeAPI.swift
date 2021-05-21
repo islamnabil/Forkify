@@ -20,7 +20,7 @@ class HomeAPI: BaseAPI<HomeNetworking>, HomeAPIProtocol  {
     }
     
     func recipeDetails(recipeId: String, view: UIView, completion: @escaping (Result<RecipeDetailsModel, NSError>) -> Void) {
-        fetchData(target: .recipeDetails(rld: recipeId), responseClass: RecipeDetailsModel.self, view: view) { (result) in
+        fetchData(target: .recipeDetails(rId: recipeId), responseClass: RecipeDetailsModel.self, view: view) { (result) in
             completion(result)
         }
     }
