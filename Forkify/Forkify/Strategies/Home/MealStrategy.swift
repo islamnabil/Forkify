@@ -11,14 +11,16 @@ import PKHUD
 class MealStrategy: HomeListStrategyProtocol {
     var view: UIView
     var tableView: UITableView
+    var tableHeaderTitle: String
     var tableCellHeight: CGFloat = 50
     var meals = [String]()
     var CachedMeals = [String]()
     
-    init(view:UIView,tableView:UITableView) {
+    init(view:UIView,tableView:UITableView, headerTitle:String) {
         self.tableView = tableView
         self.tableView.register(UINib(nibName: "MealTableCell", bundle: nil), forCellReuseIdentifier: "MealTableCell")
         self.view = view
+        self.tableHeaderTitle = headerTitle
     }
     
     

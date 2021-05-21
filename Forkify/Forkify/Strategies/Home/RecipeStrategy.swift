@@ -9,18 +9,21 @@ import UIKit
 import PKHUD
 
 class RecipeStrategy: HomeListStrategyProtocol, RecipeDetailsRoute {
+  
     var view:UIView
     var tableView: UITableView
+    var tableHeaderTitle: String
     var tableCellHeight: CGFloat = 120
     var recipes = RecipesModel()
     let api:HomeAPIProtocol = HomeAPI()
     var meal:String
     
-    init(meal:String, view:UIView, tableView:UITableView) {
+    init(meal:String, view:UIView, tableView:UITableView, headerTitle:String) {
         self.meal = meal
         self.view = view
         self.tableView = tableView
         self.tableView.register(UINib(nibName: "RecipeTableCell", bundle: nil), forCellReuseIdentifier: "RecipeTableCell")
+        self.tableHeaderTitle = headerTitle
     }
     
     func tableView(cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -9,6 +9,7 @@ import UIKit
 
  protocol HomeListStrategyProtocol {
     var tableView:UITableView {get}
+    var tableHeaderTitle:String {get}
     var tableCellHeight:CGFloat {get}
     var view:UIView {get}
     func tableView(cellForRowAt indexPath:IndexPath) -> UITableViewCell
@@ -39,9 +40,9 @@ class HomeStrategyManager {
     func setStrategy(view:UIView, strategy:HomeListStrategiesType, tableView:UITableView, meal:String = "", searchText:String = "") {
         switch strategy {
         case .meals:
-            self.strategy = MealStrategy(view: view, tableView: tableView)
+            self.strategy = MealStrategy(view: view, tableView: tableView, headerTitle: "Meals")
         case .recipes:
-             self.strategy = RecipeStrategy(meal: meal, view: view, tableView: tableView)
+            self.strategy = RecipeStrategy(meal: meal, view: view, tableView: tableView, headerTitle: "Recipes")
         }
         self.strategy?.getData()
         self.view = view
@@ -70,16 +71,21 @@ class HomeStrategyManager {
     
     func searchMeals(searchText:String){
         if let mealsStrategy = strategy as? MealStrategy {
+            mealsStrategy.tableHeaderTitle = "Meals"
             mealsStrategy.getData()
             mealsStrategy.searchMeals(searchText: searchText)
         }
     }
     
     func getSearchSuggestions() {
-        self.strategy = MealStrategy(view: view, tableView: tableView)
+        self.strategy = MealStrategy(view: view, tableView: tableView, headerTitle: "Recent Meals Search")
         if let mealsStrategy = strategy as? MealStrategy {
             mealsStrategy.getLastSearches()
         }
+    }
+    
+    func getHeaderTitle() -> String {
+        return strategy?.tableHeaderTitle ?? ""
     }
     
 }

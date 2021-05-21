@@ -60,6 +60,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
         strategy.tableView(didSelectRowAt: indexPath)
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return strategy.getHeaderTitle()
+    }
 }
 
 
