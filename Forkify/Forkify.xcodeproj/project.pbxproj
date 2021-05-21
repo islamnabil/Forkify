@@ -28,6 +28,7 @@
 		695A5BAE2657DD8C00DC24D6 /* RouterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5BAD2657DD8C00DC24D6 /* RouterConstants.swift */; };
 		695A5BB02657DE2700DC24D6 /* RoutingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5BAF2657DE2700DC24D6 /* RoutingProtocols.swift */; };
 		695A5BB32657F0B900DC24D6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5BB22657F0B900DC24D6 /* UIViewExtension.swift */; };
+		695A5BB5265805F200DC24D6 /* SafariServicesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5BB4265805F200DC24D6 /* SafariServicesController.swift */; };
 		696D30DB2653E0ED00F44246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D30DA2653E0ED00F44246 /* AppDelegate.swift */; };
 		696D30DD2653E0ED00F44246 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D30DC2653E0ED00F44246 /* SceneDelegate.swift */; };
 		696D30E22653E0ED00F44246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696D30E02653E0ED00F44246 /* Main.storyboard */; };
@@ -89,6 +90,7 @@
 		695A5BAD2657DD8C00DC24D6 /* RouterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterConstants.swift; sourceTree = "<group>"; };
 		695A5BAF2657DE2700DC24D6 /* RoutingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingProtocols.swift; sourceTree = "<group>"; };
 		695A5BB22657F0B900DC24D6 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		695A5BB4265805F200DC24D6 /* SafariServicesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariServicesController.swift; sourceTree = "<group>"; };
 		696D30D72653E0ED00F44246 /* Forkify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forkify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		696D30DA2653E0ED00F44246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		696D30DC2653E0ED00F44246 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -240,7 +242,7 @@
 				696D31122653E52100F44246 /* Extensions */,
 				696D310F2653E4E700F44246 /* Models */,
 				696D31182653E5FA00F44246 /* Netwroking */,
-				696D31152653E53C00F44246 /* PrivatePods */,
+				696D31152653E53C00F44246 /* ServicesControllers */,
 				696D31162653E54500F44246 /* Resources */,
 				696D31172653E56400F44246 /* Storyboards */,
 				696D312926540E9900F44246 /* Strategies */,
@@ -279,9 +281,9 @@
 		696D310E2653E4D700F44246 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				695A5BAC2657DD1500DC24D6 /* ViewControllersRouter */,
-				695A5B98265573CB00DC24D6 /* RecipeDetails */,
 				696D31222653F06100F44246 /* Home */,
+				695A5B98265573CB00DC24D6 /* RecipeDetails */,
+				695A5BAC2657DD1500DC24D6 /* ViewControllersRouter */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -324,12 +326,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		696D31152653E53C00F44246 /* PrivatePods */ = {
+		696D31152653E53C00F44246 /* ServicesControllers */ = {
 			isa = PBXGroup;
 			children = (
 				696D312526540A7C00F44246 /* PrivateJi.swift */,
+				695A5BB4265805F200DC24D6 /* SafariServicesController.swift */,
 			);
-			path = PrivatePods;
+			path = ServicesControllers;
 			sourceTree = "<group>";
 		};
 		696D31162653E54500F44246 /* Resources */ = {
@@ -674,6 +677,7 @@
 				696D311B2653E61B00F44246 /* TargetType.swift in Sources */,
 				695A5B9226554C5300DC24D6 /* SearchHistory+CoreDataProperties copy.swift in Sources */,
 				695A5BA22655796900DC24D6 /* IngredientTableCell.swift in Sources */,
+				695A5BB5265805F200DC24D6 /* SafariServicesController.swift in Sources */,
 				695A5B8C265510BF00DC24D6 /* RecipeStrategy.swift in Sources */,
 				695A5B8826550D4100DC24D6 /* HomeNetworking.swift in Sources */,
 				695A5B9D265577F000DC24D6 /* RecipeDetailsModel.swift in Sources */,

@@ -98,7 +98,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Recipe title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6ZX-5t-QgF">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6ZX-5t-QgF">
                                             <rect key="frame" x="10" y="175" width="394" height="72"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                             <nil key="textColor"/>
@@ -144,25 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uHb-SF-TEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2730.434782608696" y="103.79464285714285"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gaw-QV-5a6">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mv2-rv-gIa" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MHp-rt-F7E">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="qVw-2G-tey" kind="relationship" relationship="rootViewController" id="cmc-zb-LKV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ERf-85-hJw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1821.7391304347827" y="103.79464285714285"/>
+            <point key="canvasLocation" x="1833" y="104"/>
         </scene>
     </scenes>
     <resources>

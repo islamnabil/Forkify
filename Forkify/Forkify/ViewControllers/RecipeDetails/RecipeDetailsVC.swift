@@ -28,7 +28,7 @@ class RecipeDetailsVC: UIViewController {
     
     //MARK:- IBActions
     @IBAction func visitWebsitePressed(_ sender: Any) {
-        
+        SafariServicesController.present(link: recipeDetails.recipe?.source_url ?? "", presentFrom: self)
     }
     
     //MARK:- Public Methods
