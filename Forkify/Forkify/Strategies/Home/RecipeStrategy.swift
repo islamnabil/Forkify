@@ -10,14 +10,22 @@ import PKHUD
 
 class RecipeStrategy: HomeListStrategyProtocol, RecipeDetailsRoute {
   
+    // MARK:- Properties
     var view:UIView
     var tableView: UITableView
     var tableHeaderTitle: String
     var tableCellHeight: CGFloat = 120
+    
+    /// recipes to be displayed in tableView
     var recipes = RecipesModel()
+    
+    /// Access HomeAPI
     let api:HomeAPIProtocol = HomeAPI()
+    
+    // Chosen meal to display its recipes
     var meal:String
     
+    // MARK:- View LifeCycle
     init(meal:String, view:UIView, tableView:UITableView, headerTitle:String) {
         self.meal = meal
         self.view = view
@@ -25,6 +33,7 @@ class RecipeStrategy: HomeListStrategyProtocol, RecipeDetailsRoute {
         self.tableView.register(UINib(nibName: "RecipeTableCell", bundle: nil), forCellReuseIdentifier: "RecipeTableCell")
         self.tableHeaderTitle = headerTitle
     }
+    
     
     func tableView(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RecipeTableCell.self),for: indexPath) as! RecipeTableCell
@@ -34,14 +43,15 @@ class RecipeStrategy: HomeListStrategyProtocol, RecipeDetailsRoute {
     }
     
     func tableView(didSelectRowAt indexPath: IndexPath) {
-        let recipeDetailsVC = openRecipeDetails(recipeId: recipes.recipes?[indexPath.row].recipe_id ?? "")
-        tableView.findViewController()?.navigationController?.pushViewController(recipeDetailsVC, animated: true)
+        /// Open recipe details ViewCotroller with chosen meal's recipe
+        openRecipeDetails(recipeId: recipes.recipes?[indexPath.row].recipe_id ?? "", pushFromViewController: tableView.findViewController() ?? UIViewController())
     }
     
     func numberOfRows() -> Int {
         return recipes.recipes?.count ?? 0
     }
     
+    /// get recipes data of chosen `meal` from HTTP request.
     func getData() {
         api.search(meal: meal, view: self.view) { (result) in
             switch result {

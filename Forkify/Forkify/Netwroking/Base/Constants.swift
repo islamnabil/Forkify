@@ -16,5 +16,5 @@ struct Domain {
 }
 
 struct ErrorMsg:Codable {
-    var msg:[String]
+    var error:String
 }

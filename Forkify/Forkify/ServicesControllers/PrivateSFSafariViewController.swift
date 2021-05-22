@@ -8,8 +8,13 @@
 import UIKit
 import SafariServices
 
-class SafariServicesController {
+/// Interface for `SafariServices`
+class PrivateSFSafariViewController {
     
+    /// Present `SFSafariViewController`
+    /// - Parameters:
+    ///   - link: Link to be preseted.
+    ///   - ViewController: The viewController presets SFSafariViewController.
     static func present(link:String, presentFrom ViewController:UIViewController) {
         if let url = URL(string:link) {
             let vc =  SFSafariViewController(url: url)

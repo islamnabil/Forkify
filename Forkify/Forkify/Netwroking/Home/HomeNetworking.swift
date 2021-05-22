@@ -13,6 +13,7 @@ enum HomeNetworking {
     case recipeDetails(rId:String)
 }
 
+/// Implement `TargetType` protocol to set `baseURL`, `path`, `method`, `task`, `headers` for each case in `HomeNetworking` enum
 extension HomeNetworking: TargetType {
     var baseURL: String {
         return "\(Domain.url)"

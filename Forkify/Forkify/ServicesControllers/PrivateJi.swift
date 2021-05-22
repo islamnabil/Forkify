@@ -8,14 +8,17 @@
 import Foundation
 import Ji
 
+/// Interface for `Ji` pod
 class PrivateJi {
-    // MARK: - Singleton
-    private init(){}
     
-    // Access the singleton instance
-    static var shared = PrivateJi()
     
-    func parseHTML(link:String, path:String) -> [String] {
+    /// Parse HTML elements of HTTP response with `Ji` pod
+    ///
+    /// - Parameters:
+    ///   - link: URL of HTTP request
+    ///   - path: Path of HTML element to be parsed in HTTP response
+    /// - Returns: Array of string of elements content
+    static func parseHTML(link:String, path:String) -> [String] {
         var contents = [String]()
         let jiDoc = Ji(htmlURL: URL(string: link)!)
         jiDoc?.xPath("/\(path)")?.first?.forEach({ node in
@@ -24,4 +27,6 @@ class PrivateJi {
         })
         return contents
     }
+    
+    
 }

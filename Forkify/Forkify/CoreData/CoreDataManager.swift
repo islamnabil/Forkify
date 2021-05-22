@@ -75,7 +75,7 @@ class CoreDataManager{
         }
     }
     
-    
+    // MARK:- Get All Search History
     func getAllSearchHistory() -> [String] {
         var result = [String]()
         

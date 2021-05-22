@@ -10,15 +10,21 @@ import UIKit
 class RecipeDetailsVC: UIViewController {
     
     //MARK:- Properties
+    
+    /// Access HomeAPI class to call HTTP home's requests.
     private let api:HomeAPIProtocol = HomeAPI()
+    
+    /// The instance of `RecipeDetailsModel` to display Recipe details info.
     private lazy var recipeDetails = RecipeDetailsModel()
+    
+    /// The Recipe's Id
     var recipeId = String()
     
     //MARK:- IBOutlets
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var ingredientsTableView: UITableView!
-   
+    
     //MARK:- View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,22 +34,37 @@ class RecipeDetailsVC: UIViewController {
     
     //MARK:- IBActions
     @IBAction func visitWebsitePressed(_ sender: Any) {
-        SafariServicesController.present(link: recipeDetails.recipe?.source_url ?? "", presentFrom: self)
+        
+        /// Open recipe's website link in `SFSafariViewController`
+        PrivateSFSafariViewController.present(link: recipeDetails.recipe?.source_url ?? "", presentFrom: self)
+        
     }
     
-    //MARK:- Public Methods
+    //MARK:- Public Interface
+    
+    /// configure RecipeDetailsVC to pass data to `RecipeDetailsVC` from another `ViewController`
+    ///
+    /// - Parameters:
+    ///   - recipeId: id of choosen recipe
     func configureView(recipeId:String) {
         self.recipeId = recipeId
     }
     
-    //MARK:- Private Methods
+    //MARK:- Private functions
     private func setViews(){
+        
+        /// Set recipe Image with `RecipeDetailsModel` data.
         recipeImage.SetImage(link: recipeDetails.recipe?.image_url ?? "")
+        
+        /// Set recipe title label with `RecipeDetailsModel` data.
         recipeTitleLabel.text = recipeDetails.recipe?.title ?? ""
+        
+        /// Reload `ingredientsTableView` with ingredients in `RecipeDetailsModel`.
         ingredientsTableView.reloadData()
     }
     
-    /// configureTableView : `delegate`, `dataSource`
+    
+    /// configureTableView : `dataSource`
     /// and make `separatorStyle` to be none instead of singleLine
     private func configureTableView() {
         self.ingredientsTableView.register(UINib(nibName: "IngredientTableCell", bundle: nil), forCellReuseIdentifier: "IngredientTableCell")
@@ -73,6 +94,10 @@ extension RecipeDetailsVC: UITableViewDataSource {
 
 // MARK: - APIs
 extension RecipeDetailsVC {
+    
+    /// getRecipeDetailsAPI
+    /// if `success`, then `setViews` with fetched data.
+    /// if `failure`, then print `error` in terminal.
     func getRecipeDetailsAPI() {
         print(recipeId)
         api.recipeDetails(recipeId: recipeId, view: self.view) { (result) in
