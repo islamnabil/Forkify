@@ -10,10 +10,10 @@ import PKHUD
 
 class HTMLParser {
     
-    /// URL of to be parsed
+    /// URL link
     private var link:String
     
-    /// Path of HTML element in HTTP response
+    /// Path of HTML element to be parsed in HTTP response
     private var path:String
     
     
@@ -24,12 +24,10 @@ class HTMLParser {
     
     
     /// Parse HTML elements of HTTP response
-    func parse(completion: @escaping ([String]) -> () ) {
-        HUD.show(.progress)
-        DispatchQueue.global().async {
+    func parse(completion: @escaping ([String]) -> ()) {
+        DispatchQueue.global(qos: .utility).async {
             let response = PrivateJi.parseHTML(link: self.link, path: self.path)
             DispatchQueue.main.async {
-                HUD.hide()
                 completion(response)
             }
         }

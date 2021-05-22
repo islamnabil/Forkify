@@ -10,24 +10,84 @@ import XCTest
 
 class ForkifyTests: XCTestCase {
 
+    /// Access HomeAPI class to make HTTP Home requests
+    var api:HomeAPIProtocol!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        api = HomeAPI()
+
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        api = nil
+        try super.tearDownWithError()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    //MARK:- Test NetworkLayer Executes Success Request
+    func testNetworkLayerExecuteSuccessRequest() {
+        var recipes = RecipesModel()
+        
+        let expectation = expectation(description: "GET https://forkify-api.herokuapp.com/api/search?q=pizza")
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        api.search(meal: "pizza", view: UIView()) { (result) in
+            switch result {
+            case .success(let response):
+                recipes = response
+                XCTAssert(recipes.recipes?.count ?? 0 > 0)
+                expectation.fulfill()
+            case .failure(let error):
+                print(error.userInfo[NSLocalizedDescriptionKey] as? String ?? "")
+            }
+        }
+
+        
+        waitForExpectations(timeout: 10){ error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    
+    //MARK:- Test fetch recipe details
+    func testFetchRecipeDetails() {
+        var recipeDetails = RecipeDetailsModel()
+        
+        let expectation = expectation(description: "GET https://forkify-api.herokuapp.com/api/get?rId=47746")
+
+        api.recipeDetails(recipeId: "47746", view: UIView()) { (result) in
+            switch result {
+            case .success(let resposse):
+                recipeDetails = resposse
+                XCTAssert(recipeDetails.recipe != nil)
+                expectation.fulfill()
+            case .failure(let error):
+                print(error)
+            }
+        }
+
+        
+        waitForExpectations(timeout: 10){ error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    
+    //MARK:- Test Handle error response
+    func testHandleErrorResponse() {
+        api.recipeDetails(recipeId: "4746", view: UIView()) { (result) in
+            switch result {
+            case .success(_): break
+            case .failure(let error):
+                print(error)
+                XCTAssert(error.description != "")
+            }
         }
     }
 
+    
+    
 }

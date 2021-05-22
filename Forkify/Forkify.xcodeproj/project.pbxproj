@@ -51,6 +51,14 @@
 		696D313726544B5400F44246 /* RecipeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D313526544B5400F44246 /* RecipeTableCell.swift */; };
 		696D313826544B5400F44246 /* RecipeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 696D313626544B5400F44246 /* RecipeTableCell.xib */; };
 		696D313B26544C3100F44246 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D313A26544C3100F44246 /* RecipeModel.swift */; };
+		69E8BD1A26599DD200DBD376 /* PrivateSFSafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5BB4265805F200DC24D6 /* PrivateSFSafariViewController.swift */; };
+		69E8BD1B26599DE000DBD376 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B8926550D4A00DC24D6 /* HomeAPI.swift */; };
+		69E8BD1C26599DE900DBD376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D30DA2653E0ED00F44246 /* AppDelegate.swift */; };
+		69E8BD1D26599DF500DBD376 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D313A26544C3100F44246 /* RecipeModel.swift */; };
+		69E8BD1E26599E0300DBD376 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D311E2653E63400F44246 /* BaseAPI.swift */; };
+		69E8BD1F26599E1000DBD376 /* HomeNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A5B8726550D4100DC24D6 /* HomeNetworking.swift */; };
+		69E8BD2026599E1E00DBD376 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D311A2653E61B00F44246 /* TargetType.swift */; };
+		69E8BD2126599E2800DBD376 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696D31202653E88F00F44246 /* Constants.swift */; };
 		C6CFE20DB39867EBE8B8464A /* Pods_Forkify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A403671F1484E215DF55C69 /* Pods_Forkify.framework */; };
 		E27AD4700F9FA8FDE4746050 /* Pods_ForkifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0860E5C592021822F818E883 /* Pods_ForkifyTests.framework */; };
 /* End PBXBuildFile section */
@@ -705,12 +713,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				695A5B9E265577F000DC24D6 /* RecipeDetailsModel.swift in Sources */,
+				69E8BD1D26599DF500DBD376 /* RecipeModel.swift in Sources */,
 				695A5B9126554C5300DC24D6 /* SearchHistory+CoreDataClass copy.swift in Sources */,
 				695A5B9326554C5300DC24D6 /* SearchHistory+CoreDataProperties copy.swift in Sources */,
 				695A5BA32655796900DC24D6 /* IngredientTableCell.swift in Sources */,
+				69E8BD2126599E2800DBD376 /* Constants.swift in Sources */,
+				69E8BD1B26599DE000DBD376 /* HomeAPI.swift in Sources */,
+				69E8BD2026599E1E00DBD376 /* TargetType.swift in Sources */,
 				695A5B9726554C9A00DC24D6 /* CoreDataManager.swift in Sources */,
 				695A5B9B265573E600DC24D6 /* RecipeDetailsVC.swift in Sources */,
 				696D30F52653E0EF00F44246 /* ForkifyTests.swift in Sources */,
+				69E8BD1F26599E1000DBD376 /* HomeNetworking.swift in Sources */,
+				69E8BD1E26599E0300DBD376 /* BaseAPI.swift in Sources */,
+				69E8BD1C26599DE900DBD376 /* AppDelegate.swift in Sources */,
+				69E8BD1A26599DD200DBD376 /* PrivateSFSafariViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

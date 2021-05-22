@@ -31,7 +31,8 @@ class CoreDataManager{
             }
         }
         catch let error {
-            print("Fetch Records error :", error)
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
     

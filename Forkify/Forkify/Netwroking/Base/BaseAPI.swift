@@ -72,10 +72,13 @@ class BaseAPI<T: TargetType> {
                 do {
                     let er = try JSONDecoder().decode(ErrorMsg.self, from: response.data!)
                     HUD.flash(.label("\(er.error )") , onView: view , delay: 2 , completion: nil)
+                    let error = NSError(domain: target.baseURL, code: 0, userInfo: [NSLocalizedDescriptionKey: er.error])
+                    completion(.failure(error))
                 }catch {
                     HUD.flash(.label("Something went wrong Please try again later") , onView: view , delay: 2 , completion: nil)
                 }
-                completion(.failure(NSError()))
+                let error = NSError(domain: target.baseURL, code: 0, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.genericError])
+                completion(.failure(error))
             }
         }
     }
@@ -98,7 +101,7 @@ class BaseAPI<T: TargetType> {
 /// to get the image data from URL link with `SDWebImage` pod.
 extension UIImageView {
     
-    func SetImage(link:String) {
+    public func SetImage(link:String) {
         self.backgroundColor = #colorLiteral(red: 0.8115878807, green: 0.8115878807, blue: 0.8115878807, alpha: 1)
         if let url = link.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
             self.sd_setImage(with: URL(string: url), completed: nil)

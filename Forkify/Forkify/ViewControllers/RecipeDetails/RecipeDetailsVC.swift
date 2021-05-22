@@ -99,7 +99,6 @@ extension RecipeDetailsVC {
     /// if `success`, then `setViews` with fetched data.
     /// if `failure`, then print `error` in terminal.
     func getRecipeDetailsAPI() {
-        print(recipeId)
         api.recipeDetails(recipeId: recipeId, view: self.view) { (result) in
             switch result {
             case .success(let resposse):

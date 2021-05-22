@@ -9,7 +9,7 @@ import UIKit
 import SafariServices
 
 /// Interface for `SafariServices`
-class PrivateSFSafariViewController {
+ class PrivateSFSafariViewController {
     
     /// Present `SFSafariViewController`
     /// - Parameters:
